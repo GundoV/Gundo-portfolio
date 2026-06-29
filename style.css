@@ -1,0 +1,314 @@
+/* Basic reset to clear default margins */
+* {
+    html {
+    scroll-behavior: smooth;
+}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Keeps the clean spacing you see on screen */
+    background-color: #0b0c10; /* Keeps your sleek dark background */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;               
+  gap: 20px;                      
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;          
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00adb5;                 
+}
+/* Style the logo link specifically */
+.logo a {
+  color: #fff;                   /* Makes the logo text white */
+  text-decoration: none;          /* Removes the default underline */
+  font-size: 24px;                /* Makes it stand out a bit more */
+  font-weight: bold;
+}
+/* Hero Section Layout */
+.hero {
+  height: 80vh;                   /* Takes up 80% of the screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0b0c10;      /* Slightly darker background for contrast */
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #00adb5;                 /* Matching our accent color from the navbar */
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+  color: #c5c6c7;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #66fcf1;
+  margin-bottom: 30px;
+}
+
+/* Call to Action Button */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #00adb5;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #007a80;
+  transform: translateY(-3px);    /* Subtle lift effect on hover */
+}
+/* Navigation Bar Container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+
+    
+}
+
+/* "DevSpace" Logo Style */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation Links Wrapper */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* Gives nice breathing room between links */
+}
+
+/* Individual Link Styling */
+.nav-links a {
+    text-decoration: none;
+    color: #a0aec0; /* A soft, clean grey for unselected links */
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth hover animation */
+}
+
+/* Hover & Active States */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00b4d8; /* Matches your beautiful teal theme color */
+}
+/* Projects Section Styling */
+.projects-section {
+    padding: 80px 40px;
+    background-color: #0b0c10;
+    color: #fff;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #00b4d8; /* Matches your teal accent */
+}
+
+/* Creates a responsive grid layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Project Cards */
+.project-card {
+    background-color: #1f2833;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #45f3ff20;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #00b4d8;
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.project-card p {
+    color: #a0aec0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Small technology pill tags */
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background-color: #00b4d820;
+    color: #00b4d8;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+/* About Section Styling */
+.about-section {
+    padding: 80px 40px;
+    background-color: #0b0c10; /* Clean dark background match */
+    color: #fff;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-lead {
+    font-size: 20px;
+    color: #00b4d8; /* Accent teal */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #a0aec0; /* Soft grey text */
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Internal Grid for Credentials */
+.qualifications-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.qual-card {
+    background-color: #1f2833;
+    padding: 20px;
+    border-radius: 6px;
+    min-width: 250px;
+    flex: 1;
+    border-left: 4px solid #00b4d8; /* Accent bar on the side */
+}
+
+.qual-card h4 {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.qual-card p {
+    color: #a0aec0;
+    font-size: 14px;
+    margin: 0;
+}
+/* Contact Section Styling */
+.contact-heading-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* Compact Contact Footer Styling */
+.contact-section {
+    padding: 40px 20px;
+    background-color: #0b0c10; /* Restores the dark background */
+    border-top: 1px solid #45f3ff10; /* Adds a clean, subtle separation line */
+}
+
+.contact-compact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensures it looks beautiful on mobile screens too */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-inline-item {
+    font-size: 15px;
+    color: #a0aec0;
+}
+
+.contact-inline-item strong {
+    color: #fff;
+    margin-right: 5px;
+}
+
+.contact-inline-item a {
+    color: #00b4d8; /* Custom teal highlight for phone and email links */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-inline-item a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+//Live Links Styling
+.live-links {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.live-links a {
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.live-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
