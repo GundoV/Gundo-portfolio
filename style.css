@@ -312,3 +312,29 @@ nav {
     color: #fff;
     text-decoration: underline;
 }
+/* Mobile Responsiveness Rules */
+@media (max-width: 768px) {
+    /* Prevent horizontal scrolling on the main page */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Change navigation links to wrap naturally or stack */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Force the 3-column project grid to a clean 1-column stack */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        padding: 10px;
+    }
+
+    /* Prevent massive heading sizes from pushing layout borders */
+    h1 {
+        font-size: 2.2rem !important;
+    }
+}
