@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Ticket</title>
+  <title>GVN Tech - Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
  <header class="navbar">
         <div class="logo">
-            <a href="#">GVN Tech</a>
+            <a href="#">GVN <span class="animated-tech">Tech</span></a>
         </div>
-        <nav>
+        <nav class="nav-container">
             <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Dark / Light Mode Toggle Button -->
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                ☀️ Light
+            </button>
         </nav>
     </header>
 
@@ -57,7 +63,36 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Tech Stack / Skills Showcase Bar -->
+        <section id="skills" class="skills-section">
+            <h2 class="section-title">Tech Stack & Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Systems & Infrastructure</h3>
+                    <div class="skill-badges">
+                        <span>Windows Server</span>
+                        <span>Active Directory</span>
+                        <span>Microsoft Azure</span>
+                        <span>Networking</span>
+                        <span>Firewalls</span>
+                        <span>Hostinger / DNS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Full-Stack Development</h3>
+                    <div class="skill-badges">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>MongoDB</span>
+                        <span>Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section with Interactive Dropdowns -->
         <section id="projects" class="projects-section">
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
@@ -71,6 +106,11 @@
                         <span>Security</span>
                         <span>Systems Admin</span>
                     </div>
+                    <!-- Interactive Details Toggle -->
+                    <button class="toggle-details-btn" onclick="toggleDetails('proj1-details')">View Details ▼</button>
+                    <div id="proj1-details" class="project-extra-details">
+                        <p><strong>Architecture Focus:</strong> Enterprise-grade redundancy, strict firewall filtering rules, and automated system backups to guarantee zero critical data loss.</p>
+                    </div>
                 </div>
 
                 <!-- Project 2: Web Development -->
@@ -82,6 +122,10 @@
                         <span>CSS3</span>
                         <span>JavaScript</span>
                         <span>React</span>
+                    </div>
+                    <button class="toggle-details-btn" onclick="toggleDetails('proj2-details')">View Details ▼</button>
+                    <div id="proj2-details" class="project-extra-details">
+                        <p><strong>Architecture Focus:</strong> Component-driven layout models, mobile-first responsive design principles, and streamlined UI state management.</p>
                     </div>
                 </div>
 
@@ -104,8 +148,59 @@
                         <span>React</span>
                         <span>MongoDB</span>
                     </div>
+                    <button class="toggle-details-btn" onclick="toggleDetails('proj3-details')">View Details ▼</button>
+                    <div id="proj3-details" class="project-extra-details">
+                        <p><strong>Architecture Focus:</strong> End-to-end full stack integration connecting a React front-end to a robust MongoDB backend database hosted via cloud platforms.</p>
+                    </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Certificates & Credentials Section -->
+        <section id="certificates" class="certificates-section">
+            <h2 class="section-title">Certificates & Credentials</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <h3>IT System Support (MCSE)</h3>
+                    <p class="cert-issuer">CTU Training Solutions</p>
+                    <p class="cert-desc">Comprehensive certification covering systems support, enterprise network troubleshooting, and server deployment.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Diploma in Cyber Security</h3>
+                    <p class="cert-issuer">Alison</p>
+                    <p class="cert-desc">Advanced foundational training in network defense, threat assessment, and security protocol enforcement.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Safety Officer Credential</h3>
+                    <p class="cert-issuer">VUWA College of Safety</p>
+                    <p class="cert-desc">Professional credential focusing on workspace regulatory compliance, hazard risk management, and safety protocols.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Cloud Computing Essentials with Azure Management</h3>
+                    <p class="cert-issuer">Microsoft / Coursera</p>
+                    <p class="cert-desc">Authorized online course covering fundamental cloud paradigms and Azure management solutions.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>ITIL 4: Foundations and Framework</h3>
+                    <p class="cert-issuer">Logical Operations / Coursera</p>
+                    <p class="cert-desc">Foundational training in IT service management framework best practices and operational efficiency.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Data Visualization and Dashboards with Excel and Cognos</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-desc">Practical training in data analytics display, business dashboards, and reporting utilizing Excel and Cognos.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Excel Basics for Data Analysis</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-desc">Essential spreadsheet data management and analysis foundations for handling metrics and datasets.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Business Intelligence (BI) Essentials</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-desc">Core instruction in business intelligence data processing, concepts, and analytical insights generation.</p>
+                </div>
             </div>
         </section>
 
@@ -116,16 +211,41 @@
             </div>
             <div class="contact-compact-container">
                 <div class="contact-inline-item">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <strong>Email:</strong> <a href="mailto:nemandivhegv@gmail.com">nemandivhegv@gmail.com</a>
                 </div>
                 <div class="contact-inline-item">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <strong>Phone:</strong> <a href="tel:0732022496">0732022496</a>
                 </div>
                 <div class="contact-inline-item">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <strong>Location:</strong> Gauteng / Limpopo, South Africa
                 </div>
             </div>
         </footer>
     </main>
+
+    <!-- Script for interactive dropdowns and Dark/Light Mode toggle -->
+    <script>
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                toggleBtn.textContent = '🌙 Dark';
+            } else {
+                toggleBtn.textContent = '☀️ Light';
+            }
+        });
+    </script>
 </body>
 </html>

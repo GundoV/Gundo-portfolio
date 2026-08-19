@@ -1,15 +1,78 @@
 /* Basic reset to clear default margins */
 * {
-    html {
-    scroll-behavior: smooth;
-}
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
+  background-color: #0b0c10;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+  background-color: #f4f6f8;
+  color: #1a202c;
+}
+
+body.light-mode .navbar,
+body.light-mode .hero,
+body.light-mode .about-section,
+body.light-mode .skills-section,
+body.light-mode .projects-section,
+body.light-mode .certificates-section,
+body.light-mode .contact-section {
+  background-color: #f4f6f8;
+}
+
+body.light-mode .logo a {
+  color: #1a202c;
+}
+
+body.light-mode .nav-links a {
+  color: #4a5568;
+}
+
+/* Fixed: Hero subtitle text color in Light Mode */
+body.light-mode .hero-content p {
+  color: #007a80; 
+}
+
+body.light-mode .hero-content h2 {
+  color: #4a5568;
+}
+
+body.light-mode .project-card,
+body.light-mode .qual-card,
+body.light-mode .cert-card,
+body.light-mode .skill-category {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+body.light-mode .project-card h3,
+body.light-mode .qual-card h4,
+body.light-mode .cert-card h3,
+body.light-mode .skill-category h3,
+body.light-mode .hero-content h1,
+body.light-mode .contact-inline-item strong {
+  color: #1a202c;
+}
+
+body.light-mode .about-text,
+body.light-mode .project-card p,
+body.light-mode .qual-card p,
+body.light-mode .cert-card p,
+body.light-mode .contact-inline-item {
+  color: #4a5568;
 }
 
 /* Navbar Styling */
@@ -17,145 +80,274 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* Keeps the clean spacing you see on screen */
-    background-color: #0b0c10; /* Keeps your sleek dark background */
+    padding: 20px 40px;
+    background-color: #0b0c10;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;               
-  gap: 20px;                      
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;          
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00adb5;                 
-}
-/* Style the logo link specifically */
-.logo a {
-  color: #fff;                   /* Makes the logo text white */
-  text-decoration: none;          /* Removes the default underline */
-  font-size: 24px;                /* Makes it stand out a bit more */
-  font-weight: bold;
-}
-/* Hero Section Layout */
-.hero {
-  height: 80vh;                   /* Takes up 80% of the screen height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #0b0c10;      /* Slightly darker background for contrast */
-  color: #fff;
-  padding: 0 20px;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-}
-
-.highlight {
-  color: #00adb5;                 /* Matching our accent color from the navbar */
-}
-
-.hero-content h2 {
-  font-size: 1.8rem;
-  color: #c5c6c7;
-  margin-bottom: 15px;
-  font-weight: 400;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  color: #66fcf1;
-  margin-bottom: 30px;
-}
-
-/* Call to Action Button */
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #00adb5;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #007a80;
-  transform: translateY(-3px);    /* Subtle lift effect on hover */
-}
-/* Navigation Bar Container */
-nav {
+.nav-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 10px;
-
-    
+    gap: 30px;
 }
 
-/* "DevSpace" Logo Style */
+/* Logo Style with Animation */
 .logo {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
-    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Navigation Links Wrapper */
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+.animated-tech {
+    color: #00b4d8;
+    display: inline-block;
+    animation: slideInText 2s ease-in-out infinite alternate;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00b4d8, transparent);
+    animation: expandLine 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideInText {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px; /* Gives nice breathing room between links */
+    gap: 25px;
 }
 
-/* Individual Link Styling */
 .nav-links a {
     text-decoration: none;
-    color: #a0aec0; /* A soft, clean grey for unselected links */
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease; /* Smooth hover animation */
+    color: #a0aec0;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-/* Hover & Active States */
 .nav-links a:hover,
 .nav-links a.active {
-    color: #00b4d8; /* Matches your beautiful teal theme color */
+    color: #00b4d8;
 }
-/* Projects Section Styling */
-.projects-section {
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: #1f2833;
+    color: #00b4d8;
+    border: 1px solid #00b4d8;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: #00b4d8;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0b0c10;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #00adb5;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: #c5c6c7;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #66fcf1;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #00adb5;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #007a80;
+    transform: translateY(-3px);
+}
+
+/* About Section */
+.about-section {
     padding: 80px 40px;
     background-color: #0b0c10;
-    color: #fff;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .section-title {
     font-size: 28px;
     margin-bottom: 40px;
     text-align: center;
-    color: #00b4d8; /* Matches your teal accent */
+    color: #00b4d8;
 }
 
-/* Creates a responsive grid layout */
+.about-lead {
+    font-size: 20px;
+    color: #00b4d8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #a0aec0;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.qualifications-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.qual-card {
+    background-color: #1f2833;
+    padding: 20px;
+    border-radius: 6px;
+    min-width: 250px;
+    flex: 1;
+    border-left: 4px solid #00b4d8;
+    text-align: left;
+}
+
+.qual-card h4 {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.qual-card p {
+    color: #a0aec0;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Tech Stack / Skills Section */
+.skills-section {
+    padding: 60px 40px;
+    background-color: #0b0c10;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color: #1f2833;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #45f3ff20;
+}
+
+.skill-category h3 {
+    color: #00b4d8;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.skill-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skill-badges span {
+    background-color: #00b4d820;
+    color: #00b4d8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 40px;
+    background-color: #0b0c10;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* Individual Project Cards */
 .project-card {
     background-color: #1f2833;
     padding: 25px;
@@ -181,11 +373,11 @@ nav {
     margin-bottom: 20px;
 }
 
-/* Small technology pill tags */
 .tags {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .tags span {
@@ -196,73 +388,85 @@ nav {
     font-size: 12px;
     font-weight: 600;
 }
-/* About Section Styling */
-.about-section {
-    padding: 80px 40px;
-    background-color: #0b0c10; /* Clean dark background match */
+
+/* Interactive Project Details Toggle */
+.toggle-details-btn {
+    background: transparent;
+    border: 1px solid #00b4d8;
+    color: #00b4d8;
+    padding: 6px 12px;
+    margin-top: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.toggle-details-btn:hover {
+    background: #00b4d8;
     color: #fff;
 }
 
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-lead {
-    font-size: 20px;
-    color: #00b4d8; /* Accent teal */
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.about-text {
-    font-size: 16px;
-    color: #a0aec0; /* Soft grey text */
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-
-/* Internal Grid for Credentials */
-.qualifications-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.qual-card {
-    background-color: #1f2833;
-    padding: 20px;
-    border-radius: 6px;
-    min-width: 250px;
-    flex: 1;
-    border-left: 4px solid #00b4d8; /* Accent bar on the side */
-}
-
-.qual-card h4 {
-    margin-bottom: 8px;
-    color: #fff;
-    font-size: 16px;
-}
-
-.qual-card p {
+.project-extra-details {
+    display: none;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
     color: #a0aec0;
-    font-size: 14px;
-    margin: 0;
 }
-/* Contact Section Styling */
+
+/* Certificates Section */
+.certificates-section {
+    padding: 80px 40px;
+    background-color: #0b0c10;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background-color: #1f2833;
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid #00b4d8;
+}
+
+.cert-card h3 {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.cert-issuer {
+    color: #00b4d8;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.cert-desc {
+    color: #a0aec0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Contact Section */
 .contact-heading-container {
     text-align: center;
     margin-bottom: 30px;
 }
-/* Compact Contact Footer Styling */
+
 .contact-section {
-    padding: 40px 20px;
-    background-color: #0b0c10; /* Restores the dark background */
-    border-top: 1px solid #45f3ff10; /* Adds a clean, subtle separation line */
+    padding: 60px 20px;
+    background-color: #0b0c10;
+    border-top: 1px solid #45f3ff10;
 }
 
 .contact-compact-container {
@@ -270,23 +474,31 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    flex-wrap: wrap; /* Ensures it looks beautiful on mobile screens too */
+    flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-inline-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 15px;
     color: #a0aec0;
 }
 
+.contact-icon {
+    stroke: #00b4d8;
+    vertical-align: middle;
+}
+
 .contact-inline-item strong {
     color: #fff;
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 .contact-inline-item a {
-    color: #00b4d8; /* Custom teal highlight for phone and email links */
+    color: #00b4d8;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -295,7 +507,8 @@ nav {
     color: #fff;
     text-decoration: underline;
 }
-//Live Links Styling
+
+/* Live Links Styling */
 .live-links {
     margin: 15px 0;
     font-size: 14px;
@@ -312,44 +525,39 @@ nav {
     color: #fff;
     text-decoration: underline;
 }
-/* Mobile Responsiveness Rules */
-/* Mobile Responsiveness Rules */
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
         width: 100%;
     }
 
-    /* Stack the logo and the links vertically so they have breathing room */
     .navbar {
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
         padding: 15px 10px;
         text-align: center;
     }
 
-    /* Ensure the link list uses the full width and centers perfectly */
-    nav {
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
         width: 100%;
     }
 
-    nav ul {
-        display: flex;
-        flex-direction: row; /* Keep them side-by-side */
+    .nav-links {
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
-        gap: 20px; /* Perfect spacing between links */
-        padding: 0;
-        margin: 0;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
-    /* Force the 3-column project grid to a clean 1-column stack */
     .projects-grid {
         grid-template-columns: 1fr !important;
         padding: 10px;
     }
 
-    /* Prevent massive heading sizes from pushing layout borders */
     h1 {
         font-size: 2.2rem !important;
     }
