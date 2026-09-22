@@ -259,7 +259,7 @@ body.light-mode .system-status-badge {
 .status-dot {
     width: 10px;
     height: 10px;
-    background-color: #10b981; /* Vibrant operational green */
+    background-color: #10b981;
     border-radius: 50%;
     box-shadow: 0 0 8px #10b981;
     animation: pulseGlow 2s infinite;
@@ -660,11 +660,35 @@ body.light-mode .project-extra-details {
         font-size: 2.2rem !important;
     }
 }
-/* AI Chatbot Floating Widget Styles */
-.chat-widget {
+
+/* Floating WhatsApp Button Styles (Bottom Right) */
+.whatsapp-float {
     position: fixed;
     bottom: 25px;
     right: 25px;
+    background-color: #25d366;
+    color: #ffffff;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+}
+
+/* AI Chatbot Floating Widget Styles (Bottom Left) */
+.chat-widget {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
     z-index: 1000;
     font-family: Arial, sans-serif;
 }
@@ -693,7 +717,7 @@ body.light-mode .project-extra-details {
 .chat-window {
     position: absolute;
     bottom: 60px;
-    right: 0;
+    left: 0;
     width: 320px;
     height: 420px;
     background-color: #1f2833;
