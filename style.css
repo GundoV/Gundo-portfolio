@@ -1,6 +1,6 @@
 /* ==========================================
    Root Variables for Easy Theme Management
-   ================================---------- */
+   ========================================== */
 :root {
     --bg-dark: #0b0c10;
     --bg-card-dark: #1f2833;
@@ -167,6 +167,31 @@ body.light-mode .navbar {
     100% {
         width: 100%;
     }
+}
+
+/* Hamburger Menu Toggle Button */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 21px;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-main-dark, #f8fafc);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .hamburger-btn .bar {
+    background-color: var(--text-main-light, #1a202c);
 }
 
 /* Navigation Links */
@@ -650,44 +675,34 @@ body.light-mode .project-extra-details {
     text-decoration: underline;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 10px;
-        text-align: center;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-    }
-
-    .nav-links {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr !important;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 2.2rem !important;
-    }
+/* Floating Stack Container (Bottom Right) */
+.floating-stack-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 1000;
 }
 
-/* Floating WhatsApp Button Styles (Bottom Right) */
+.floating-stack-container .chat-widget,
+.floating-stack-container .whatsapp-float {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+}
+
+.floating-stack-container .chat-window {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    left: auto;
+}
+
+/* Floating WhatsApp Button Styles (Standalone Fallback) */
 .whatsapp-float {
     position: fixed;
     bottom: 25px;
@@ -710,7 +725,7 @@ body.light-mode .project-extra-details {
     transform: translateY(-3px);
 }
 
-/* AI Chatbot Floating Widget Styles (Bottom Left) */
+/* AI Chatbot Floating Widget Styles */
 .chat-widget {
     position: fixed;
     bottom: 25px;
@@ -908,4 +923,69 @@ body.light-mode .chat-input-area input {
     font-size: 13px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* Mobile Responsiveness & Hamburger Drawer Menu */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .nav-container {
+        position: fixed;
+        top: 70px;
+        left: -100%; /* Hidden off-screen by default */
+        width: 260px;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-card-dark);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        gap: 20px;
+    }
+
+    body.light-mode .nav-container {
+        background-color: var(--bg-card-light);
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container.active {
+        left: 0; /* Slide menu in from the left */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .theme-toggle-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.2rem !important;
+    }
 }
