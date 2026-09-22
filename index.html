@@ -35,6 +35,12 @@
                 <h2>IT Specialist & Aspiring Full-Stack Engineer</h2>
                 <p>Building secure, scalable networks and modern web applications.</p>
                 <a href="#projects" class="btn">View My Work</a>
+
+                <!-- Live System Status Badge -->
+                <div class="system-status-badge">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Infrastructure Status: <strong>99.9% Uptime</strong> (All Systems Operational)</span>
+                </div>
             </div>
         </section>
         
@@ -142,7 +148,27 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Interactive Python Snake Game -->
+                <!-- Featured Project 3: Airbnb Full-Stack Platform Clone -->
+                <div class="project-card featured-project">
+                    <span class="featured-badge">Featured Full-Stack</span>
+                    <h3>Airbnb Full-Stack Platform Clone</h3>
+                    <p>A fully functional full-stack web application built from the ground up. Features dynamic property listings, user authentication pathways, interactive booking logic, and seamless cloud database integration.</p>
+                    <div class="live-links">
+                        <a href="https://gund-airbnb-clone.onrender.com" target="_blank" class="highlight-link">Live App (Render) ↗</a>
+                    </div>
+                    <div class="tags">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <button class="toggle-details-btn" onclick="toggleDetails('proj-airbnb-details')">View Details ▼</button>
+                    <div id="proj-airbnb-details" class="project-extra-details">
+                        <p><strong>Architecture Focus:</strong> Complete RESTful API architecture connecting a responsive React front-end to a scalable MongoDB backend deployed via cloud platforms.</p>
+                    </div>
+                </div>
+
+                <!-- Project: Interactive Python Snake Game -->
                 <div class="project-card">
                     <h3>Retro Python Snake Game</h3>
                     <p>A custom-built, feature-rich browser implementation of the classic arcade Snake game. Includes real-time score tracking, dynamic difficulty acceleration, audio alerts, and responsive interactive controls.</p>
@@ -161,26 +187,7 @@
                     </div>
                 </div>
 
-                <!-- Featured Project: Full-Stack Airbnb Clone -->
-                <div class="project-card">
-                    <h3>Airbnb Full-Stack Platform Clone</h3>
-                    <p>A fully functional full-stack web application built from the ground up. Features dynamic property listings, user authentication pathways, interactive booking logic, and seamless cloud database integration.</p>
-                    <div class="live-links">
-                        <a href="https://gund-airbnb-clone.onrender.com" target="_blank">Live App (Render) ↗</a>
-                    </div>
-                    <div class="tags">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <button class="toggle-details-btn" onclick="toggleDetails('proj-airbnb-details')">View Details ▼</button>
-                    <div id="proj-airbnb-details" class="project-extra-details">
-                        <p><strong>Architecture Focus:</strong> Complete RESTful API architecture connecting a responsive React front-end to a scalable MongoDB backend deployed via cloud platforms.</p>
-                    </div>
-                </div>
-
-                <!-- Project 4: Live E-Commerce & Web Administration -->
+                <!-- Project: Live E-Commerce & Web Administration -->
                 <div class="project-card">
                     <h3>Live Production Platforms & Web Administration</h3>
                     <p>Architected, deployed, and continuously maintain live production web systems from the ground up—including domain infrastructure engineering, email alias routing, and e-commerce storefront logic.</p>
@@ -198,7 +205,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5: Netflix Landing Page Clone -->
+                <!-- Project: Netflix Landing Page Clone -->
                 <div class="project-card">
                     <h3>Netflix Landing Page Clone</h3>
                     <p>A responsive front-end recreation of the Netflix landing page, built to emulate modern streaming platform UI design, clean typography hierarchy, and flexible layout positioning.</p>
@@ -216,7 +223,7 @@
                     </div>
                 </div>
 
-                <!-- Project 6: Tesla Landing Page Clone -->
+                <!-- Project: Tesla Landing Page Clone -->
                 <div class="project-card">
                     <h3>Tesla Landing Page Clone</h3>
                     <p>An interactive front-end replica of the Tesla vehicle and clean-energy showcase platform, featuring sleek CTA action blocks, minimalist navigation, and scalable modern grid design.</p>
@@ -234,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- Project 7: IT Systems & Admin -->
+                <!-- Project: IT Systems & Admin -->
                 <div class="project-card">
                     <h3>Network Engineering & System Support</h3>
                     <p>Designed and simulated secure, scalable enterprise network infrastructures. Implemented robust firewall architectures and system administration configurations to maximize uptime and protect data integrity.</p>
@@ -322,6 +329,11 @@
                     <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     <strong>Location:</strong> Gauteng / Limpopo, South Africa
                 </div>
+                <!-- WhatsApp Quick Chat Link -->
+                <div class="contact-inline-item">
+                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    <strong>WhatsApp:</strong> <a href="https://wa.me/27732022496" target="_blank">Chat on WhatsApp ↗</a>
+                </div>
             </div>
         </footer>
     </main>
@@ -347,5 +359,42 @@
             }
         });
     </script>
+    <!-- Floating AI Chatbot Widget -->
+<div id="ai-chat-widget" class="chat-widget">
+    <!-- Chat Toggle Button -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn" aria-label="Open AI Assistant">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span>Ask GVN AI</span>
+    </button>
+
+    <!-- Chat Window Container -->
+    <div id="chat-window" class="chat-window" style="display: none;">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <span class="status-dot-chat"></span>
+                <h3>GVN Virtual Assistant</h3>
+            </div>
+            <button id="chat-close-btn" class="chat-close-btn">&times;</button>
+        </div>
+        
+        <div id="chat-messages" class="chat-messages">
+            <div class="chat-message bot-message">
+                Hi there! I'm Gundo's virtual assistant. Ask me about his IT experience, full-stack projects (like Invoicely or Airbnb clone), or certifications!
+            </div>
+            <!-- Quick Chips -->
+            <div class="chat-quick-replies">
+                <button onclick="sendQuickQuery('What are Gundo\'s core IT skills?')">IT Skills</button>
+                <button onclick="sendQuickQuery('Tell me about his full-stack projects')">Projects</button>
+                <button onclick="sendQuickQuery('How do I contact Gundo?')">Contact Info</button>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="chat-send-btn" onclick="handleUserMessage()">Send</button>
+        </div>
+    </div>
+</div>
+<script src="/Gundo-portfolio/script.js"></script>
 </body>
 </html>
